@@ -1,0 +1,156 @@
+/* Importeer een modern lettertype */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;       /* Diep zwart */
+    --text-color: #ffffff;     /* Helder wit */
+    --accent-color: #ea0808;
+    --secondary-color: #1a1a1a;/* Donkergrijs voor kaarten */
+    --spacing: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigatie */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px); /* Modern glas-effect */
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .active {
+    color: var(--accent-color);
+}
+
+/* Hero Sectie */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem); /* Groeit mee met scherm */
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #888;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* Knoppen */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--accent-color);
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgb(131, 10, 10);
+}
+
+/* Project Grid */
+.featured-projects {
+    padding: var(--spacing) 10%;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #333;}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px; /* Zachte hoeken voor designer vibe */
+    filter: grayscale(20%) contrast(1.1); /* Subtiele edit voor een pro look */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cta {
+    min-height: 100vh;      /* full viewport height */
+
+    align-items: center;    /* vertical center */
+    justify-content: center;/* horizontal center */
+}

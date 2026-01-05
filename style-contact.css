@@ -1,0 +1,133 @@
+/* style-contact.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Voorkomt scrollen op desktop voor die strakke look */
+}
+
+/* Navigatie styling gelijk aan je screenshot */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff0000;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* De Centrerings-logica die je vroeg */
+.contact-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-section {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* Formulier styling in de 'Dark' vibe */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 10px;
+    color: #fff;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff0000;
+}
+
+/* De rode knop uit de screenshot */
+.btn-submit {
+    margin-top: 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px; /* Pill shape zoals in screenshot */
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    width: fit-content;
+    align-self: center; /* Zorgt dat de pil-knop niet de hele breedte pakt */
+}
+
+.btn-submit:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Mobiele optimalisatie */
+@media (max-width: 768px) {
+    body { overflow: auto; }
+    h1 { font-size: 2.5rem; }
+    .contact-container { padding-top: 100px; }
+}
