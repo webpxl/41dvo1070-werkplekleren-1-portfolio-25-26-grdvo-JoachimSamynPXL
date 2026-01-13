@@ -1,5 +1,14 @@
-/* style-contact.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+:root {
+    --bg: #000000;
+    --card-bg: #0a0a0a;
+    --fg: #ffffff;
+    --muted: #a0a0a0;
+    --accent-red: #ff0000;
+    --header-height: 5rem;
+    --border: 1px solid #1a1a1a;
+}
 
 * {
     margin: 0;
@@ -8,126 +17,163 @@
 }
 
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--bg);
+    color: var(--fg);
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* Voorkomt scrollen op desktop voor die strakke look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Navigatie styling gelijk aan je screenshot */
+/* Header & Nav */
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    padding: 2rem 5%;
+    height: var(--header-height);
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: var(--border);
 }
 
 nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    color: #ff0000;
+.logo a {
+    color: var(--accent-red);
+    text-decoration: none;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-}
-
-nav ul li {
-    margin-left: 2rem;
+    gap: 2rem;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--fg);
     text-decoration: none;
+    font-weight: 600;
     font-size: 0.9rem;
     transition: 0.3s;
+    opacity: 0.6;
 }
 
-nav ul li a.active, nav ul li a:hover {
-    color: #ff0000;
+nav ul li a:hover, nav ul li a.active {
+    opacity: 1;
+    color: var(--accent-red);
 }
 
-/* De Centrerings-logica die je vroeg */
+/* Layout */
 .contact-container {
-    min-height: 100vh;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: var(--header-height) 20px 2rem;
 }
 
 .contact-section {
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     text-align: center;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 900;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
 }
 
-p {
-    color: #666;
-    margin-bottom: 2.5rem;
+.contact-section p {
+    color: var(--muted);
+    margin-bottom: 3rem;
 }
 
-/* Formulier styling in de 'Dark' vibe */
-form {
+/* Modern Contact Card Items */
+.contact-card {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: #0a0a0a;
-    border: 1px solid #222;
-    border-radius: 10px;
-    color: #fff;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.3s ease;
+.contact-item {
+    background: var(--card-bg);
+    border: var(--border);
+    padding: 1.25rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
 }
 
-input:focus, textarea:focus {
-    border-color: #ff0000;
+.contact-item:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-4px);
+    background: #111;
 }
 
-/* De rode knop uit de screenshot */
-.btn-submit {
-    margin-top: 1rem;
-    background-color: #ff0000;
-    color: #fff;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px; /* Pill shape zoals in screenshot */
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    width: fit-content;
-    align-self: center; /* Zorgt dat de pil-knop niet de hele breedte pakt */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: #151515;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.25rem;
+    font-size: 1.2rem;
+    color: var(--accent-red);
+    transition: 0.3s;
 }
 
-.btn-submit:hover {
-    background-color: #cc0000;
-    transform: scale(1.05);
+.contact-item:hover .icon-box {
+    background: var(--accent-red);
+    color: white;
 }
 
-/* Mobiele optimalisatie */
-@media (max-width: 768px) {
-    body { overflow: auto; }
+.text-box span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 2px;
+}
+
+.text-box strong {
+    color: var(--fg);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    header { padding: 0 5%; }
+    nav ul { display: none; } /* Consider a burger menu for mobile later */
     h1 { font-size: 2.5rem; }
-    .contact-container { padding-top: 100px; }
 }

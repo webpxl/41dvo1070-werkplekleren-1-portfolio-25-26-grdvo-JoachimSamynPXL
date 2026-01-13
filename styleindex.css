@@ -1,156 +1,222 @@
-/* Importeer een modern lettertype */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap');
 
 :root {
-    --bg-color: #0a0a0a;       /* Diep zwart */
-    --text-color: #ffffff;     /* Helder wit */
-    --accent-color: #ea0808;
-    --secondary-color: #1a1a1a;/* Donkergrijs voor kaarten */
-    --spacing: 80px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --bg-dark: #0a0a0a;
+    --bg-card: #141414;
+    --accent-red: #ff3b30;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Navigatie */
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 2. Navigation */
+header {
+    padding: 2rem 5%;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
-    position: sticky;
-    top: 0;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px); /* Modern glas-effect */
-    z-index: 1000;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     font-weight: 800;
     font-size: 1.5rem;
-    letter-spacing: -1px;
-    color: var(--accent-color);
+    color: var(--accent-red);
 }
 
 nav ul {
     display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 30px;
+    gap: 2rem;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 300;
-    transition: 0.3s;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-nav ul li a:hover, .active {
-    color: var(--accent-color);
+nav ul li a:hover {
+    color: var(--accent-red);
 }
 
-/* Hero Sectie */
+/* 3. Hero Section */
 .hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10%;
-}
-
-.hero h1 {
-    font-size: clamp(3rem, 8vw, 6rem); /* Groeit mee met scherm */
-    line-height: 1;
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -3px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #888;
-    max-width: 600px;
-    margin-bottom: 40px;
-}
-
-/* Knoppen */
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: var(--accent-color);
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: transform 0.3s ease;
-}
-
-.btn:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 10px 20px rgb(131, 10, 10);
-}
-
-/* Project Grid */
-.featured-projects {
-    padding: var(--spacing) 10%;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background-color: var(--secondary-color);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid #333;}
-
-.hero-container {
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+    padding: 0 5%;
 }
 
-.hero-text {
-    flex: 1;
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
 }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+.hero-text h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
 }
 
 .hero-image img {
     width: 100%;
-    max-width: 450px;
-    border-radius: 30px; /* Zachte hoeken voor designer vibe */
-    filter: grayscale(20%) contrast(1.1); /* Subtiele edit voor een pro look */
+    border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.1);
+    filter: grayscale(20%);
 }
 
-.cta {
-    min-height: 100vh;      /* full viewport height */
+/* 4. Buttons */
+.btn {
+    background-color: var(--accent-red);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+}
 
-    align-items: center;    /* vertical center */
-    justify-content: center;/* horizontal center */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 59, 48, 0.3);
+}
+
+/* 5. Project Grid */
+.projects {
+    padding: 100px 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #222;
+}
+
+.project-card:hover {
+    border-color: var(--accent-red);
+}
+
+.project-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+/* 6. Call to Action & Summary */
+.about-summary, .cta {
+    padding: 80px 5%;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.cta h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* 7. Footer */
+footer {
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+}
+
+
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-image {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    /* logo */
+}
+.logo a {
+    color: var(--accent-red);
+    text-decoration: none;
+    font-weight: 800;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
 }
