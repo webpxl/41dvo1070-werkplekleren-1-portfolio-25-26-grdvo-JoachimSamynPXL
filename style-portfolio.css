@@ -1,0 +1,146 @@
+/* Importeer Montserrat voor de dikke koppen en strakke look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #0b0b0b; /* Iets zachter zwart voor een luxe uitstraling */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigatie */
+header {
+    padding: 2.5rem 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff3c2e; /* Exacte rode kleur uit screenshot */
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: -1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem; /* Modernere manier voor tussenruimte */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff3c2e;
+}
+
+/* Hero Sectie */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8% 5rem 8%;
+    min-height: 85vh;
+}
+
+.hero-content {
+    flex: 1.2;
+    padding-right: 4rem;
+}
+
+.hero-content h1 {
+    font-size: 5.5rem; /* Extra groot voor impact */
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* De knop */
+.btn {
+    display: inline-block;
+    background-color: #ff3c2e;
+    color: white;
+    padding: 1.1rem 2.8rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 60, 46, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 60, 46, 0.3);
+    background-color: #e53529;
+}
+
+/* Afbeelding styling */
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 650px; /* Hoogte vastzetten voor de portret look */
+    object-fit: cover;
+    border-radius: 40px; /* Grote ronde hoeken zoals op de foto */
+}
+
+/* Content secties onder de hero */
+section:not(.hero) {
+    padding: 5rem 8%;
+    max-width: 1000px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #ff3c2e;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+li::before {
+    content: "•";
+    color: #ff3c2e;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
