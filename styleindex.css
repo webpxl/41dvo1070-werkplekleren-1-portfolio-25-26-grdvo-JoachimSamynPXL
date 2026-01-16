@@ -220,3 +220,59 @@ footer {
 .logo a:hover {
     opacity: 0.8;
 }
+
+/* Container instellingen */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* De Gallery Grid */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px; /* Basis hoogte voor rijen */
+    grid-gap: 15px;
+    grid-auto-flow: dense; /* Vult lege gaatjes automatisch op */
+}
+
+/* Individuele items */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt dat foto's niet vervormen */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect voor extra flair */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Specifieke groottes voor je klassen */
+.gallery-item.tall {
+    grid-row: span 2; /* Neemt 2 rijen in beslag */
+}
+
+.gallery-item.wide {
+    grid-column: span 2; /* Neemt 2 kolommen in beslag */
+}
+
+/* Responsive: op mobiel alles gewoon onder elkaar */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .gallery-item.wide, .gallery-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
